@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'phone_login',
-    # 'rest_framework',
-    # 'rest_framework.authtoken',
+    'forms' # addded
+
 ]
 
 # REST_FRAMEWORK = {
