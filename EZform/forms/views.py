@@ -7,6 +7,8 @@ def index(request):
 
 def form(request):
     return render(request, 'forms/form.html')
+
+    
 '''
 from django.http import HttpResponse
 
