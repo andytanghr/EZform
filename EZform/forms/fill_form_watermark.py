@@ -6,7 +6,7 @@ from PyPDF2 import PdfFileReader, PdfFileWriter
 def makePDF(customerData):
     # declare location of PDFs to use
     overlay_pdf_file_name = 'overlay_PDF.pdf' # textOverSuccess.pdf
-    pdf_template_file_name = 'background.pdf' # base_PDF_template
+    pdf_template_file_name = 'DL43.pdf' # base_PDF_template
 
 
     pdf = FPDF('P', 'mm', 'letter') # paragraph oriented, millimeters measured, letter page sized
@@ -16,14 +16,20 @@ def makePDF(customerData):
     ### test dictionary for overlay data
     ### WORKS
 
-    result_pdf_file_name = "./pdfs/" + customerData['person_name'] + ".pdf"
+    result_pdf_file_name = "./forms/pdfs/" + customerData['last_name'] + ".pdf"
     form_dictionary = \
     {
         'form': 'ACCT',
         'data': [
-            { 'x': 13, 'y': 146, 'w': 94, 'h': 5.5, 'value': customerData['person_name'] },
-            { 'x': 108, 'y': 146, 'w': 23, 'h': 5.5, 'value': '1450' },
-            { 'x': 133, 'y': 146, 'w': 22, 'h': 5.5, 'value': 'iterating make another' },
+
+                { 'x': 23, 'y': 20, 'w': 77, 'h': 3, 'value': customerData['last_name'] }, # last name
+                { 'x': 23, 'y': 24, 'w': 74, 'h': 3, 'value': customerData['first_name'] }, # first name
+                { 'x': 26, 'y': 29, 'w': 73, 'h': 3, 'value': customerData['middle_name'] }, # middle name
+                { 'x': 17, 'y': 34, 'w': 82, 'h': 3, 'value': customerData['suffix'] }, # suffix
+                { 'x': 26, 'y': 29, 'w': 73, 'h': 3, 'value': customerData['maiden_name'] }, # maiden name
+                { 'x': 46, 'y': 44, 'w': 12, 'h': 3, 'value': str(customerData['birth_month']) }, # birth month (##)
+                { 'x': 64, 'y': 44, 'w': 12, 'h': 3, 'value': str(customerData['birthday']) }, # birthday (##)
+                { 'x': 81, 'y': 44, 'w': 12, 'h': 3, 'value': str(customerData['birth_year']) }, # birth year (####)
         ]
     }
 
@@ -39,7 +45,7 @@ def makePDF(customerData):
 
     ### this takes the overlay data and merges it with the watermark template
     ### WORKS
-    with open("./polls/background.pdf", 'rb') as pdf_template_file, open(overlay_pdf_file_name, 'rb') as overlay_PDF_file:
+    with open("./forms/DL43.pdf", 'rb') as pdf_template_file, open(overlay_pdf_file_name, 'rb') as overlay_PDF_file:
         # open watermark template pdf object
         pdf_template = PdfFileReader(pdf_template_file)
         # open overlay data pdf object
@@ -47,7 +53,7 @@ def makePDF(customerData):
 
         template_total_pages = pdf_template.getNumPages()
         # iterate through each page to flatten overlay data and watermark template
-        for page_number in range(0, template_total_pages):
+        for page_number in range(0, template_total_pages-1):
             # get each page from watermark template
             template_page = pdf_template.getPage(page_number)
             # merge overlay data to watermark template

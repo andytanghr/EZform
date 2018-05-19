@@ -21,9 +21,5 @@ api.send_sms(body='I can haz txt', from_phone='+17135170617', to=['+17135170617'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-    # url(r'^phone_login/', include('phone_login.urls', namespace='phone_login'),),
-=======
     path('form/', include('forms.urls')),
->>>>>>> refs/remotes/origin/master
 ]
