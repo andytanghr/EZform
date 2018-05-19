@@ -52,3 +52,6 @@ class PersonToRegister(models.Model):
     SSN1 = models.CharField(max_length=3, blank=True, null=True)
     SSN2 = models.CharField(max_length=2, blank=True, null=True)
     SSN3 = models.CharField(max_length=4, blank=True, null=True)
+    male = models.CharField(max_length=1, blank=True, null=True)
+    female = models.CharField(max_length=1, blank=True, null=True)
+    weight = male = models.CharField(max_length=1, blank=True, null=True)

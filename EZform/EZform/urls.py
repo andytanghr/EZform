@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from sendsms import api
-api.send_sms(body='I can haz txt', from_phone='+17135170617', to=['+17135170617'])
 
 urlpatterns = [
     path('admin/', admin.site.urls),
