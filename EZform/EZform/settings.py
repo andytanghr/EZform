@@ -37,7 +37,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phone_login',
+    'forms.apps.FormsConfig'
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
 ]
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#     )
+# }
+
+
+
+# AUTHENTICATION_BACKENDS = [
+#     'phone_login.backends.phone_backend.PhoneBackend',
+#     'django.contrib.auth.backends.ModelBackend'
+# ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
