@@ -30,7 +30,7 @@ def makePDF(customerData):
                 { 'x': 51, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birth_month']) }, # birth month (##)
                 { 'x': 69, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birthday']) }, # birthday (##)
                 { 'x': 86, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birth_year']) }, # birth year (####)
-                { 'x': 17, 'y': 55, 'w': 20, 'h': 3, 'value': customerData['SSN'] },
+                { 'x': 17, 'y': 55, 'w': 20, 'h': 3, 'value': customerData['SSN1'] },
         ]
     }
 
