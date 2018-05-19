@@ -14,12 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 from sendsms import api
 api.send_sms(body='I can haz txt', from_phone='+17135170617', to=['+17135170617'])
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     # url(r'^phone_login/', include('phone_login.urls', namespace='phone_login'),),
+=======
+    path('form/', include('forms.urls')),
+>>>>>>> refs/remotes/origin/master
 ]
