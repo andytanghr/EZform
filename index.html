@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <input type="text" name="first_name" value="" id="first_name">
+      <input type="text" name="last_name" value="" id="last_name">
+      <input type="text" name="phone" value="" id="phone">
+      <input type="email" name="email" value="" id="email">
+      <input type="submit" name="" value="">
+    </form>
+
+
+
+    <script type="text/javascript">
+      let form = document.querySelector('form');
+      let formFields = document.querySelectorAll('input');
+      let storage;
+      if (localStorage.length > 0) {
+        storage = localStorage.getItem('userInfo').split(',')|| null;
+      }
+
+      if (storage != null) {
+        for (let i = 0; i < storage.length; i++ ) {
+          formFields[i].value = storage[i]
+        }
+      }
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        let userInfo = [];
+        for (let i = 0; i < formFields.length; i++) {
+          if (formFields[i].value) {
+            userInfo.push(formFields[i].value)
+          }
+        }
+        localStorage.setItem('userInfo', userInfo);
+        let j = localStorage.getItem('userInfo')
+        console.log(j)
+      })
+    </script>
+  </body>
+</html>
