@@ -49,3 +49,6 @@ class PersonToRegister(models.Model):
     birth_month = models.PositiveIntegerField(blank=True, null=True)
     birthday = models.PositiveIntegerField(blank=True, null=True)
     birth_year = models.PositiveIntegerField(blank=True, null=True)
+    SSN1 = models.CharField(max_length=3, blank=True, null=True)
+    SSN2 = models.CharField(max_length=2, blank=True, null=True)
+    SSN3 = models.CharField(max_length=4, blank=True, null=True)

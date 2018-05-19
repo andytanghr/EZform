@@ -11,7 +11,7 @@ def makePDF(customerData):
 
     pdf = FPDF('P', 'mm', 'letter') # paragraph oriented, millimeters measured, letter page sized
     pdf.add_page()
-    pdf.set_font('Arial', '', 14) # font, style ('' means normal), 14pt
+    pdf.set_font('Arial', '', 12) # font, style ('' means normal), 14pt
 
     ### test dictionary for overlay data
     ### WORKS
@@ -21,15 +21,16 @@ def makePDF(customerData):
     {
         'form': 'ACCT',
         'data': [
-
-                { 'x': 23, 'y': 20, 'w': 77, 'h': 3, 'value': customerData['last_name'] }, # last name
-                { 'x': 23, 'y': 24, 'w': 74, 'h': 3, 'value': customerData['first_name'] }, # first name
-                { 'x': 26, 'y': 29, 'w': 73, 'h': 3, 'value': customerData['middle_name'] }, # middle name
-                { 'x': 17, 'y': 34, 'w': 82, 'h': 3, 'value': customerData['suffix'] }, # suffix
-                { 'x': 26, 'y': 29, 'w': 73, 'h': 3, 'value': customerData['maiden_name'] }, # maiden name
-                { 'x': 46, 'y': 44, 'w': 12, 'h': 3, 'value': str(customerData['birth_month']) }, # birth month (##)
-                { 'x': 64, 'y': 44, 'w': 12, 'h': 3, 'value': str(customerData['birthday']) }, # birthday (##)
-                { 'x': 81, 'y': 44, 'w': 12, 'h': 3, 'value': str(customerData['birth_year']) }, # birth year (####)
+                # initial x = 23, initial y = 20, shift x by 5, y by 7
+                { 'x': 28, 'y': 27, 'w': 77, 'h': 3, 'value': customerData['last_name'] }, # last name
+                { 'x': 28, 'y': 31, 'w': 74, 'h': 3, 'value': customerData['first_name'] }, # first name
+                { 'x': 31, 'y': 36, 'w': 73, 'h': 3, 'value': customerData['middle_name'] }, # middle name
+                { 'x': 22, 'y': 41, 'w': 82, 'h': 3, 'value': customerData['suffix'] }, # suffix
+                # { 'x': 31, 'y': 36, 'w': 73, 'h': 3, 'value': customerData['maiden_name'] }, # maiden name
+                { 'x': 51, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birth_month']) }, # birth month (##)
+                { 'x': 69, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birthday']) }, # birthday (##)
+                { 'x': 86, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birth_year']) }, # birth year (####)
+                { 'x': 17, 'y': 55, 'w': 20, 'h': 3, 'value': customerData['SSN'] },
         ]
     }
 
@@ -45,7 +46,7 @@ def makePDF(customerData):
 
     ### this takes the overlay data and merges it with the watermark template
     ### WORKS
-    with open("./forms/DL43.pdf", 'rb') as pdf_template_file, open(overlay_pdf_file_name, 'rb') as overlay_PDF_file:
+    with open("./forms/DL43en.pdf", 'rb') as pdf_template_file, open(overlay_pdf_file_name, 'rb') as overlay_PDF_file:
         # open watermark template pdf object
         pdf_template = PdfFileReader(pdf_template_file)
         # open overlay data pdf object
@@ -53,7 +54,7 @@ def makePDF(customerData):
 
         template_total_pages = pdf_template.getNumPages()
         # iterate through each page to flatten overlay data and watermark template
-        for page_number in range(0, template_total_pages-1):
+        for page_number in range(0, template_total_pages):
             # get each page from watermark template
             template_page = pdf_template.getPage(page_number)
             # merge overlay data to watermark template
