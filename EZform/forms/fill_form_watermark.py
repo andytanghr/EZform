@@ -27,14 +27,14 @@ def makePDF(customerData):
                 { 'x': 31, 'y': 36, 'w': 73, 'h': 3, 'value': customerData['middle_name'] }, # middle name
                 { 'x': 22, 'y': 41, 'w': 82, 'h': 3, 'value': customerData['suffix'] }, # suffix
                 # { 'x': 31, 'y': 36, 'w': 73, 'h': 3, 'value': customerData['maiden_name'] }, # maiden name
-                { 'x': 51, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birth_month']) }, # birth month (##)
-                { 'x': 69, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birthday']) }, # birthday (##)
-                { 'x': 86, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birth_year']) }, # birth year (####)
+                { 'x': 55, 'y': 52, 'w': 12, 'h': 3, 'value': str(customerData['birth_month']) }, # birth month (##)
+                { 'x': 71, 'y': 52, 'w': 12, 'h': 3, 'value': str(customerData['birthday']) }, # birthday (##)
+                { 'x': 87, 'y': 52, 'w': 12, 'h': 3, 'value': str(customerData['birth_year']) }, # birth year (####)
                 { 'x': 17, 'y': 55, 'w': 20, 'h': 3, 'value': customerData['SSN1'] },
                 { 'x': 43, 'y': 55, 'w': 16, 'h': 3, 'value': customerData['SSN2'] }, # SSN2 (##)
                 { 'x': 65, 'y': 55, 'w': 27, 'h': 3, 'value': customerData['SSN3'] }, # SSN3 (####)
                 { 'x': 33, 'y': 62, 'w': 3, 'h': 3, 'value': customerData['male'] }, # sex male
-                # { 'x': 48, 'y': 62, 'w': 3, 'h': 3, 'value': customerData['female'] }, # sex female
+                { 'x': 48, 'y': 62, 'w': 3, 'h': 3, 'value': customerData['female'] }, # sex female
                 { 'x': 92, 'y': 62, 'w': 12, 'h': 3, 'value': customerData['weight'] }, # weight (lbs)
                 { 'x': 29, 'y': 66, 'w': 25, 'h': 3, 'value': customerData['eye_color'] }, # eye color
                 { 'x': 72, 'y': 66, 'w': 12, 'h': 3, 'value': customerData['height_ft'] }, # height (ft)
@@ -43,22 +43,76 @@ def makePDF(customerData):
                 #
                 # # contact information
                 { 'x': 132, 'y': 27, 'w': 68, 'h': 3, 'value': customerData['home_phone'] }, # home phone
-                # { 'x': 133, 'y': 32, 'w': 66, 'h': 3, 'value': customerData['other_phone'] }, # other phone
+                { 'x': 133, 'y': 32, 'w': 66, 'h': 3, 'value': customerData['other_phone'] }, # other phone
                 { 'x': 121, 'y': 37, 'w': 78, 'h': 3, 'value': customerData['email'] }, # email
                 #
-                # # address information
-                # { 'x': 144, 'y': 48, 'w': 56, 'h': 3, 'value': customerData['residential_address'] }, # residential address
-                # { 'x': 119, 'y': 53, 'w': 49, 'h': 3, 'value': customerData['residential_city'] }, # residential city
-                # { 'x': 180, 'y': 53, 'w': 20, 'h': 3, 'value': customerData['residential_state'] }, # residential state
-                # { 'x': 126, 'y': 59, 'w': 25, 'h': 3, 'value': customerData['residential_zip'] }, # residential ZIP
-                # { 'x': 166, 'y': 59, 'w': 34, 'h': 3, 'value': customerData['residential_county'] }, # residential county
+                # address information
+                { 'x': 144, 'y': 48, 'w': 56, 'h': 3, 'value': customerData['residential_address'] }, # residential address
+                { 'x': 119, 'y': 53, 'w': 49, 'h': 3, 'value': customerData['residential_city'] }, # residential city
+                { 'x': 180, 'y': 53, 'w': 20, 'h': 3, 'value': customerData['residential_state'] }, # residential state
+                { 'x': 126, 'y': 59, 'w': 25, 'h': 3, 'value': customerData['residential_zip'] }, # residential ZIP
+                { 'x': 166, 'y': 59, 'w': 34, 'h': 3, 'value': customerData['residential_county'] }, # residential county
 
                 # if residential address is same as mailing, values in this group will be the same as the group immediately above
-                # { 'x': 138, 'y': 64, 'w': 62, 'h': 3, 'value': customerData['mailing_address'] }, # mailing address
-                # { 'x': 119, 'y': 69, 'w': 49, 'h': 3, 'value': customerData['mailing_city'] }, # mailing city
-                # { 'x': 180, 'y': 69, 'w': 20, 'h': 3, 'value': customerData['mailing_state'] }, # mailing state
-                # { 'x': 126, 'y': 74, 'w': 25, 'h': 3, 'value': customerData['mailing_zip'] }, # mailing ZIP
-                # { 'x': 167, 'y': 74, 'w': 33, 'h': 3, 'value': customerData['mailing_county'] }, # mailing county
+                { 'x': 138, 'y': 64, 'w': 62, 'h': 3, 'value': customerData['mailing_address'] }, # mailing address
+                { 'x': 119, 'y': 69, 'w': 49, 'h': 3, 'value': customerData['mailing_city'] }, # mailing city
+                { 'x': 180, 'y': 69, 'w': 20, 'h': 3, 'value': customerData['mailing_state'] }, # mailing state
+                { 'x': 126, 'y': 74, 'w': 25, 'h': 3, 'value': customerData['mailing_zip'] }, # mailing ZIP
+                { 'x': 167, 'y': 74, 'w': 33, 'h': 3, 'value': customerData['mailing_county'] }, # mailing county
+                { 'x': 14.5, 'y': 90.5, 'w': 3, 'h': 3, 'value': customerData['q1yes'] }, # Q1 Y
+                { 'x': 22.4, 'y': 90.5, 'w': 3, 'h': 3, 'value': customerData['q1no'] }, # Q1 N
+                { 'x': 14.5, 'y': 94.4, 'w': 3, 'h': 3, 'value': customerData['q2yes'] }, # Q2 Y
+                { 'x': 22.4, 'y': 94.4, 'w': 3, 'h': 3, 'value': customerData['q2no'] }, # Q2 N
+                { 'x': 14.5, 'y': 108.5, 'w': 3, 'h': 3, 'value': customerData['q3yes'] }, # Q3 Y
+                { 'x': 22.4, 'y': 108.5, 'w': 3, 'h': 3, 'value': customerData['q3no'] }, # Q3 N
+                { 'x': 14.5, 'y': 112.4, 'w': 3, 'h': 3, 'value': customerData['q4yes'] }, # Q4 Y
+                { 'x': 22.4, 'y': 112.4, 'w': 3, 'h': 3, 'value': customerData['q4no'] }, # Q4 N
+                { 'x': 192, 'y': 112, 'w': 8.5, 'h': 3, 'value': customerData['q4_amount'] }, # Q4 $ amount
+                { 'x': 14.5, 'y': 116.2, 'w': 3, 'h': 3, 'value': customerData['q5yes'] }, # Q5 Y
+                { 'x': 22.4, 'y': 116.2, 'w': 3, 'h': 3, 'value': customerData['q5no'] }, # Q5 N
+                { 'x': 14.5, 'y': 120.1, 'w': 3, 'h': 3, 'value': customerData['q6yes'] }, # Q6 Y
+                { 'x': 22.4, 'y': 120.1, 'w': 3, 'h': 3, 'value': customerData['q6no'] }, # Q6 N
+                { 'x': 159, 'y': 120, 'w': 8, 'h': 3, 'value': customerData['q6amount'] }, # Q6 # amount
+                { 'x': 14.5, 'y': 127.2, 'w': 3, 'h': 3, 'value': customerData['q7yes'] }, # Q7 Y
+                { 'x': 22.4, 'y': 127.2, 'w': 3, 'h': 3, 'value': customerData['q7no'] }, # Q7 N
+                { 'x': 134, 'y': 127, 'w': 8, 'h': 3, 'value': customerData['q7amount'] }, # Q7 $ amount
+                { 'x': 14.5, 'y': 131.4, 'w': 3, 'h': 3, 'value': customerData['q8yes'] }, # Q8 Y
+                { 'x': 22.4, 'y': 131.4, 'w': 3, 'h': 3, 'value': customerData['q8no'] }, # Q8 N
+                { 'x': 153, 'y': 130, 'w': 51, 'h': 3, 'value': customerData['q8text'] }, # Q8 text
+                { 'x': 14.5, 'y': 138.8, 'w': 3, 'h': 3, 'value': customerData['q9yes'] }, # Q9 Y
+                { 'x': 22.4, 'y': 138.8, 'w': 3, 'h': 3, 'value': customerData['q9no'] }, # Q9 N
+                { 'x': 14.5, 'y': 150.4, 'w': 3, 'h': 3, 'value': customerData['q10yes'] }, # Q10 Y
+                { 'x': 22.4, 'y': 150.4, 'w': 3, 'h': 3, 'value': customerData['q10no'] }, # Q10 N
+                { 'x': 41, 'y': 154, 'w': 43, 'h': 3, 'value': customerData['q10a_emergency_name'] }, # Q10a emergency name
+                { 'x': 109, 'y': 154, 'w': 35, 'h': 3, 'value': customerData['q10a_emergency_phone'] }, # Q10a emergency phone number
+                { 'x': 155, 'y': 154, 'w': 48, 'h': 3, 'value': customerData['q10a_emergency_address'] }, # Q10a emergency address
+                { 'x': 41, 'y': 158, 'w': 43, 'h': 3, 'value': customerData['q10b_emergency_name'] }, # Q10b emergency name
+                { 'x': 109, 'y': 158, 'w': 35, 'h': 3, 'value': customerData['q10b_emergency_phone'] }, # Q10b emergency phone number
+                { 'x': 155, 'y': 158, 'w': 48, 'h': 3, 'value': customerData['q10b_emergency_address'] }, # Q10b emergency address
+                { 'x': 14.5, 'y': 167.7, 'w': 3, 'h': 3, 'value': customerData['q11yes'] }, # Q11 Y
+                { 'x': 22.4, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q11no'] }, # Q11 N
+                { 'x': 63, 'y': 173, 'w': 3, 'h': 3, 'value': customerData['q11improved'] }, # Q11 improved
+                { 'x': 85, 'y': 175, 'w': 3, 'h': 3, 'value': customerData['q11deteriorated'] }, # Q11 deteriorated
+                { 'x': 14.5, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q12yes'] }, # Q12 Y
+                { 'x': 17.4, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q12no'] }, # Q12 N
+                { 'x': 30, 'y': 153, 'w': 174, 'h': 3, 'value': customerData['q12text'] }, # Q12 text
+                { 'x': 14.5, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q13yes'] }, # Q13 Y
+                { 'x': 22.4, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q13no'] }, # Q13 N
+                { 'x': 14.5, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q14yes'] }, # Q14 Y
+                { 'x': 22.4, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q14no'] }, # Q14 N
+                { 'x': 14.5, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q15yes'] }, # Q15 Y
+                { 'x': 22.4, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q15no'] }, # Q15 N
+                { 'x': 14.5, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q16yes'] }, # Q16 Y
+                { 'x': 22.4, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q16no'] }, # Q16 N
+                { 'x': 40, 'y': 153, 'w': 163, 'h': 3, 'value': customerData['q16text'] }, # Q16 text
+                { 'x': 14.5, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q17yes'] }, # Q17 Y
+                { 'x': 22.4, 'y': 153, 'w': 3, 'h': 3, 'value': customerData['q17no'] }, # Q17 N
+
+                # affirmation/signature question about housing type (house, apartment, motel, shelter)
+                { 'x': 47, 'y': 255, 'w': 3, 'h': 3, 'value': customerData['house'] }, # house
+                { 'x': 79, 'y': 255, 'w': 3, 'h': 3, 'value': customerData['apartment'] }, # apartment
+                { 'x': 97, 'y': 255, 'w': 3, 'h': 3, 'value': customerData['motel'] }, # motel
+                { 'x': 110, 'y': 255, 'w': 3, 'h': 3, 'value': customerData['shelter'] }, # shelter
         ]
     }
 

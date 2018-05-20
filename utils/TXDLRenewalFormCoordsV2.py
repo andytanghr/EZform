@@ -58,7 +58,7 @@ form_dictionary_en = \
         { 'x': 22.4, 'y': 120.1, 'w': 3, 'h': 3, 'value': q6no }, # Q6 N
         { 'x': 159 'y': 120, 'w': 8, 'h': 3, 'value': q6amount }, # Q6 # amount
         { 'x': 14.5, 'y': 127.2, 'w': 3, 'h': 3, 'value': q7yes }, # Q7 Y
-        { 'x': 22.4, 'y': 127.2, 'w': 3, 'h': 3, 'value': qyno }, # Q7 N
+        { 'x': 22.4, 'y': 127.2, 'w': 3, 'h': 3, 'value': q7no }, # Q7 N
         { 'x': 134 'y': 127, 'w': 8, 'h': 3, 'value': q7amount }, # Q7 $ amount
         { 'x': 14.5, 'y': 131.4, 'w': 3, 'h': 3, 'value': q8yes }, # Q8 Y
         { 'x': 22.4, 'y': 131.4, 'w': 3, 'h': 3, 'value': q8no }, # Q8 N
@@ -68,10 +68,10 @@ form_dictionary_en = \
         { 'x': 14.5, 'y': 150.4, 'w': 3, 'h': 3, 'value': q10yes }, # Q10 Y
         { 'x': 22.4, 'y': 150.4, 'w': 3, 'h': 3, 'value': q10no }, # Q10 N
         { 'x': 41, 'y': 154, 'w': 43, 'h': 3, 'value': q10a_emergency_name }, # Q10a emergency name
-        { 'x': 109, 'y': 154, 'w': 35, 'h': 3, 'value': q10a_emergency_phone }, # Q10a emergency phone number 
+        { 'x': 109, 'y': 154, 'w': 35, 'h': 3, 'value': q10a_emergency_phone }, # Q10a emergency phone number
         { 'x': 155, 'y': 154, 'w': 48, 'h': 3, 'value': q10a_emergency_address }, # Q10a emergency address
         { 'x': 41, 'y': 158, 'w': 43, 'h': 3, 'value': q10b_emergency_name }, # Q10b emergency name
-        { 'x': 109, 'y': 158, 'w': 35, 'h': 3, 'value': q10b_emergency_phone }, # Q10b emergency phone number 
+        { 'x': 109, 'y': 158, 'w': 35, 'h': 3, 'value': q10b_emergency_phone }, # Q10b emergency phone number
         { 'x': 155, 'y': 158, 'w': 48, 'h': 3, 'value': q10b_emergency_address }, # Q10b emergency address
 
         # questions 11-17
@@ -105,7 +105,7 @@ form_dictionary_en = \
 
 
 # Spanish version
-form_dictionary_es = \ 
+form_dictionary_es = \
 {
     'form': 'DL43', # Application for Renewal/Replacement/Change of a Texas DL or ID card
     'data': [
@@ -174,10 +174,10 @@ form_dictionary_es = \
         { 'x': 9.6, 'y': 145, 'w': 3, 'h': 3, 'value': q10yes }, # Q10 Y
         { 'x': 17.4, 'y': 145, 'w': 3, 'h': 3, 'value': q10no }, # Q10 N
         { 'x': 39, 'y': 148, 'w': 40, 'h': 3, 'value': q10a_emergency_name }, # Q10a emergency name
-        { 'x': 102, 'y': 148, 'w': 35, 'h': 3, 'value': q10a_emergency_phone }, # Q10a emergency phone number 
+        { 'x': 102, 'y': 148, 'w': 35, 'h': 3, 'value': q10a_emergency_phone }, # Q10a emergency phone number
         { 'x': 150, 'y': 148, 'w': 48, 'h': 3, 'value': q10a_emergency_address }, # Q10a emergency address
         { 'x': 39, 'y': 153, 'w': 40, 'h': 3, 'value': q10b_emergency_name }, # Q10b emergency name
-        { 'x': 102, 'y': 153, 'w': 35, 'h': 3, 'value': q10b_emergency_phone }, # Q10b emergency phone number 
+        { 'x': 102, 'y': 153, 'w': 35, 'h': 3, 'value': q10b_emergency_phone }, # Q10b emergency phone number
         { 'x': 150, 'y': 153, 'w': 48, 'h': 3, 'value': q10b_emergency_address }, # Q10b emergency address
 
         # questions 11-17
