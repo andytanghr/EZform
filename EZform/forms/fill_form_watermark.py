@@ -31,6 +31,34 @@ def makePDF(customerData):
                 { 'x': 69, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birthday']) }, # birthday (##)
                 { 'x': 86, 'y': 51, 'w': 12, 'h': 3, 'value': str(customerData['birth_year']) }, # birth year (####)
                 { 'x': 17, 'y': 55, 'w': 20, 'h': 3, 'value': customerData['SSN1'] },
+                { 'x': 43, 'y': 55, 'w': 16, 'h': 3, 'value': customerData['SSN2'] }, # SSN2 (##)
+                { 'x': 65, 'y': 55, 'w': 27, 'h': 3, 'value': customerData['SSN3'] }, # SSN3 (####)
+                { 'x': 33, 'y': 62, 'w': 3, 'h': 3, 'value': customerData['male'] }, # sex male
+                # { 'x': 48, 'y': 62, 'w': 3, 'h': 3, 'value': customerData['female'] }, # sex female
+                { 'x': 92, 'y': 62, 'w': 12, 'h': 3, 'value': customerData['weight'] }, # weight (lbs)
+                { 'x': 29, 'y': 66, 'w': 25, 'h': 3, 'value': customerData['eye_color'] }, # eye color
+                { 'x': 72, 'y': 66, 'w': 12, 'h': 3, 'value': customerData['height_ft'] }, # height (ft)
+                { 'x': 92, 'y': 66, 'w': 12, 'h': 3, 'value': customerData['height_in'] }, # height (in)
+                # { 'x': 35, 'y': 71, 'w': 9, 'h': 3, 'value': customerData['race'] }, # race
+                #
+                # # contact information
+                { 'x': 132, 'y': 27, 'w': 68, 'h': 3, 'value': customerData['home_phone'] }, # home phone
+                # { 'x': 133, 'y': 32, 'w': 66, 'h': 3, 'value': customerData['other_phone'] }, # other phone
+                { 'x': 121, 'y': 37, 'w': 78, 'h': 3, 'value': customerData['email'] }, # email
+                #
+                # # address information
+                # { 'x': 144, 'y': 48, 'w': 56, 'h': 3, 'value': customerData['residential_address'] }, # residential address
+                # { 'x': 119, 'y': 53, 'w': 49, 'h': 3, 'value': customerData['residential_city'] }, # residential city
+                # { 'x': 180, 'y': 53, 'w': 20, 'h': 3, 'value': customerData['residential_state'] }, # residential state
+                # { 'x': 126, 'y': 59, 'w': 25, 'h': 3, 'value': customerData['residential_zip'] }, # residential ZIP
+                # { 'x': 166, 'y': 59, 'w': 34, 'h': 3, 'value': customerData['residential_county'] }, # residential county
+
+                # if residential address is same as mailing, values in this group will be the same as the group immediately above
+                # { 'x': 138, 'y': 64, 'w': 62, 'h': 3, 'value': customerData['mailing_address'] }, # mailing address
+                # { 'x': 119, 'y': 69, 'w': 49, 'h': 3, 'value': customerData['mailing_city'] }, # mailing city
+                # { 'x': 180, 'y': 69, 'w': 20, 'h': 3, 'value': customerData['mailing_state'] }, # mailing state
+                # { 'x': 126, 'y': 74, 'w': 25, 'h': 3, 'value': customerData['mailing_zip'] }, # mailing ZIP
+                # { 'x': 167, 'y': 74, 'w': 33, 'h': 3, 'value': customerData['mailing_county'] }, # mailing county
         ]
     }
 
